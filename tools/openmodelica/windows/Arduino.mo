@@ -567,7 +567,7 @@ Arduino.SerialCommunication.Functions.<b>ieeesingle2num</b>(hexa);
           import sComm = Arduino.SerialCommunication.Functions;
           import strm = Modelica.Utilities.Streams;
           Integer ok(fixed = false);
-          Integer digital_in(fixed = false);
+          Integer val(fixed = false);
           Integer digital_out(fixed = false);
           Integer c_ok(fixed = false);
         algorithm
@@ -578,17 +578,17 @@ Arduino.SerialCommunication.Functions.<b>ieeesingle2num</b>(hexa);
           if ok <> 0 then
             strm.print("Unable to open serial port, please check");
           else
-            digital_in := sComm.cmd_digital_in(1, 12) "";
-            if digital_in == 0 then
-              strm.print("0");
+            val := sComm.cmd_digital_in(1, 12) "Read the pushbutton status";
+            if val == 0 then
               digital_out := sComm.cmd_digital_out(1, 9, 0) "This will turn OFF the blue LED";
               sComm.delay(200);
             else
-              strm.print("1");
               digital_out := sComm.cmd_digital_out(1, 9, 1) "This will turn ON the blue LED";
               sComm.delay(200);
             end if;
           end if;
+//      strm.print("0");
+//      strm.print("1");
 //for i in 1:1000 loop
 //end for;
 //  strm.print(String(time));
@@ -604,7 +604,7 @@ Arduino.SerialCommunication.Functions.<b>ieeesingle2num</b>(hexa);
           import sComm = Arduino.SerialCommunication.Functions;
           import strm = Modelica.Utilities.Streams;
           Integer ok(fixed = false);
-          Integer digital_in(fixed = false);
+          Integer val(fixed = false);
           Integer c_ok(fixed = false);
         algorithm
           when initial() then
@@ -613,8 +613,8 @@ Arduino.SerialCommunication.Functions.<b>ieeesingle2num</b>(hexa);
           if ok <> 0 then
             strm.print("Unable to open serial port, please check");
           else
-            digital_in := sComm.cmd_digital_in(1, 12);
-            if digital_in == 0 then
+            val := sComm.cmd_digital_in(1, 12) "Read the pushbutton status";
+            if val == 0 then
               strm.print("0");
               sComm.delay(200);
             else
