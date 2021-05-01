@@ -8,7 +8,7 @@ void setup() {
   pinMode(12, INPUT);
   for (i = 0; i < 1000; i++) {
     sensorValue = digitalRead(12);
-    if (sensorValue==0) {
+    if (sensorValue == 0) {
       digitalWrite(9, LOW);
       delay(5);
     } 
