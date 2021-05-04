@@ -197,7 +197,7 @@ void loop() {
        if (val==49 || val==50) { //servo 1 or 2
           pin=val-48; //number of the servo
           if (pin==1) {
-            servo1.attach(9); 
+            servo1.attach(5); 
             servo1.write(0);           
 //            agv=servo1.read();
 //            Serial.println(agv);
@@ -790,5 +790,3 @@ void counter_4_change() { //counter 4
 void counter_5_change() { //counter 5
   counter_5++;
 }
-
-
