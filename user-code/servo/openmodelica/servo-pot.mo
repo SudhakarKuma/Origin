@@ -11,7 +11,7 @@ algorithm
     if ok <> 0 then
       strm.print("Check the serial port and try again");
     else
-      sComm.cmd_servo_attach(1, 1) "Attach the motor to pin 9";
+      sComm.cmd_servo_attach(1, 1) "Attach the motor to pin 5";
       sComm.delay(2000);
       for i in 1:50 loop
         val := sComm.cmd_analog_in(1, 2) "Read potentiometer value";
