@@ -543,7 +543,7 @@ Arduino.SerialCommunication.Functions.<b>ieeesingle2num</b>(hexa);
             if ok <> 0 then
               strm.print("Check the serial port and try again");
             else
-              for i in 0:5 loop
+              for i in 1:5 loop
                 digital_out := sComm.cmd_digital_out(1, 10, 1) "This will turn ON the green LED";
                 sComm.delay(1000) "Delay for 1 second";
                 digital_out := sComm.cmd_digital_out(1, 10, 0) "This will turn OFF the green Led";
@@ -876,7 +876,7 @@ Arduino.SerialCommunication.Functions.<b>ieeesingle2num</b>(hexa);
               strm.print("Unable to open serial port, please check");
             else
             sComm.cmd_dcmotor_setup(1, 3, 1, 9, 10) "Setup DC motor of type 3 (L293D), motor 1, pins 9 and 10";
-              for i in 0:4 loop
+              for i in 1:4 loop
                 sComm.cmd_dcmotor_run(1, 1, 100) "Motor 1 runs at PWM 100";
                 sComm.delay(3000) "for 3 seconds";
                 sComm.cmd_dcmotor_run(1, 1, 0) "Halt the motor";
