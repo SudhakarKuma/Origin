@@ -910,7 +910,7 @@ Arduino.SerialCommunication.Functions.<b>ieeesingle2num</b>(hexa);
               strm.print("Check the serial port and try again");
             else
               sComm.delay(2000);
-              sComm.cmd_servo_attach(1, 1) "To attach the motor to pin 9 of servo1";
+              sComm.cmd_servo_attach(1, 1) "To attach the motor to pin 5 of servo1";
               sComm.cmd_servo_move(1, 1, 30) "tell servo to rotate by 30 degrees";
               sComm.delay(1000);
             end if;
@@ -936,7 +936,7 @@ Arduino.SerialCommunication.Functions.<b>ieeesingle2num</b>(hexa);
               strm.print("Check the serial port and try again");
             else
               sComm.delay(2000);
-              sComm.cmd_servo_attach(1, 1) "Attach motor to pin 9. 1 means pin 9.";
+              sComm.cmd_servo_attach(1, 1) "Attach motor to pin 5. 1 means pin 5.";
               sComm.delay(2000);
               angle := 20 "Angle by which it has to move";
               for i in 1:10 loop
@@ -964,7 +964,7 @@ Arduino.SerialCommunication.Functions.<b>ieeesingle2num</b>(hexa);
             if ok <> 0 then
               strm.print("Check the serial port and try again");
             else
-              sComm.cmd_servo_attach(1, 1) "Attach the motor to pin 9. 1 means 9";
+              sComm.cmd_servo_attach(1, 1) "Attach the motor to pin 5. 1 means 5";
               sComm.cmd_servo_move(1, 1, 90) "Move the servo to 90 degree";
               sComm.delay(1000) "be there for one second";
               sComm.cmd_servo_move(1, 1, 45) "Move the servo to 45 degree";
@@ -991,7 +991,7 @@ Arduino.SerialCommunication.Functions.<b>ieeesingle2num</b>(hexa);
             if ok <> 0 then
               strm.print("Check the serial port and try again");
             else
-              sComm.cmd_servo_attach(1, 1) "Attach the motor to pin 9";
+              sComm.cmd_servo_attach(1, 1) "Attach the motor to pin 5";
               sComm.delay(2000);
               for i in 1:50 loop
                 val := sComm.cmd_analog_in(1, 2) "Read potentiometer value";
